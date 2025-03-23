@@ -1,1 +1,1 @@
-# IDMX 225 Midterm
+Syed Midterm
