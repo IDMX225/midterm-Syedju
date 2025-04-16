@@ -1,104 +1,186 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #cbcac7;
+    color: #1c2418;
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: "Times New Roman";
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 30px;
 }
 
 header {
-    background-color: #222;
-    color: white;
     text-align: center;
-    padding: 20px;
 }
 
-#hero {
-    text-align: center;
-    padding: 50px;
-    background-color: #ddd;
+#hero,
+footer {
+    color: #8E4129;
+    border: 10px solid #789a2e;
+    border-radius: 0 0 100px 100px;
+    box-shadow: 25px 25px 5px rgba(0, 0, 0, .2) inset;
+    background-color: #C1D6CF;
+    padding: 10px;
+    margin: 30px;
 }
 
 #hero img {
+    width: 300px;
+}
+
+#bio {
+    text-align: center;
+}
+
+#hobbies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+.hobbies-list ul {
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.hobbies-text-one {
+    font-size: 20px;
+    color: blue;
+}
+
+#gallery {
+    border: 2px solid #61a5ed;
+    padding: 1rem;
+}
+
+#gallery img {
     max-width: 100%;
-    height: auto;
+}
+
+.responsive-gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.responsive-gallery-row figure {
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+.responsive-gallery-row img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
-section {
-    padding: 20px;
-    text-align: center;
+.responsive-gallery-row figcaption {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #555;
 }
 
-.service, .project {
-    background: white;
-    padding: 15px;
-    margin: 10px auto;
-    width: 80%;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+#lit {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1.5rem;
 }
 
-.project img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+#lit h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
-footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-}
-
-
-.testimonial-container {
+.responsive-flex {
     display: flex;
-    justify-content: space-around;
+    gap: 2rem;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
-.testimonial {
-    background: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    text-align: center;
+.fix-text {
+    flex: 1 1 45%;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+    color: #333;
 }
 
-.stars {
-    color: gold;
-    font-size: 20px;
-    margin-top: 5px;
+.indent {
+    font-size: 2rem;
+    float: left;
+    margin-right: 6px;
+    color: #444;
+    font-weight: bold;
 }
 
-.service-container, .portfolio-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+.fix-text span.indent:not(:first-child) {
+    display: none;
 }
 
-.service, .project {
-    width: 30%;
-    text-align: center;
-}
+@media screen and (min-width: 60em) {
+    #gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr; 
+      gap: 1rem;
+      padding: 1rem;
+      align-items: center;
+    }
+  
+    #gallery figure {
+      display: contents; 
+    }
+  
+    #gallery img {
+      width: 100%;
+      height: auto;
+      grid-column: 1;
+    }
+  
+    #gallery figcaption {
+      font-size: 1.1rem;
+      font-style: italic;
+      grid-column: 2;
+      align-self: center;
+      text-align: left;
+    }
+  
+    #gallery hr {
+      display: none; 
+    }
+  }
+  
 
-@media (max-width: 768px) {
-    .service, .project {
-        width: 100%;
+  @media screen and (min-width: 100em) {
+    .responsive-gallery-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #gallery h2 {
+        grid-column: 1 / -1;
+    }
+
+    .responsive-gallery-row figure {
+        display: block;
+    }
+
+    #lit div {
+        columns: 40rem;
+        column-gap: 2rem;
     }
 }
-
-
-@media (max-width: 768px) {
-    .testimonial {
-        width: 100%;
-    }
-}
-
-
